@@ -6,6 +6,7 @@ public class SlingshotController : MonoBehaviour {
 
 	[Header ("Object references")]
 	public Rigidbody2D anchor;
+	public PlayerController player;
 
 	[Header ("Hook variables")]
 	public float maxDragDistance;
@@ -66,6 +67,7 @@ public class SlingshotController : MonoBehaviour {
 
 	void Release() {
 		released = true;
+		player.AddForce(rb.velocity);
 
 		Reset();
 	}

@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour {
 
 	[Header ("Movement")]
 	public float forceToAdd = 5f;
-	private bool addedForce = false;
 
 	[Header ("Ground check")]
 	[SerializeField] private Transform groundCheck;

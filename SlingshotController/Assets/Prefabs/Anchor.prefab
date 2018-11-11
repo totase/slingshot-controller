@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 50366600123389916}
+  player: {fileID: 0}
   maxDragDistance: 1.5
 --- !u!231 &231447414332975920
 SpringJoint2D:

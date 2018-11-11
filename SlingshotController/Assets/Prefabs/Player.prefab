@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe02ff2fcd1f154fb2d9ba6b06961da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceToAdd: 0.5
+  forceToAdd: 0.3
   groundCheck: {fileID: 4453254728573252}
   whatIsGround:
     serializedVersion: 2
