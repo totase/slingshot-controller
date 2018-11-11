@@ -10,9 +10,7 @@ public class SlingshotController : MonoBehaviour {
 
 	[Header ("Hook variables")]
 	public float maxDragDistance;
-
 	private Vector2 prevVelocity;
-
 	private bool released = false;
 
 	private Rigidbody2D rb;  
@@ -48,12 +46,6 @@ public class SlingshotController : MonoBehaviour {
 		} else {
 			rb.position = mousePos;
 		}
-	}
-
-	public void SetPosition(Vector3 pos) {
-		anchor.gameObject.transform.position = pos;
-		
-		Reset();
 	}
 
 	void OnMouseDown() {
