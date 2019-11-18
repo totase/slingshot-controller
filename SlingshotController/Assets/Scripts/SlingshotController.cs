@@ -11,34 +11,34 @@ public class SlingshotController : MonoBehaviour
 
   [Header("Hook variables")]
   public float maxDragDistance;
-  private Vector2 prevVelocity;
-  private bool released = false;
 
-  private Rigidbody2D rb;
-  private bool dragging = false;
+  private Vector2 _prevVelocity;
+  private bool _released = false;
+  private Rigidbody2D _rb;
+  private bool _dragging = false;
 
   void Awake()
   {
-    rb = GetComponent<Rigidbody2D>();
+    _rb = GetComponent<Rigidbody2D>();
   }
 
   void Update()
   {
-    if (dragging && !released)
+    if (_dragging && !_released)
     {
       Dragging();
     }
 
-    if (!released)
+    if (!_released)
     {
-      if (!rb.isKinematic && prevVelocity.sqrMagnitude > rb.velocity.sqrMagnitude)
+      if (!_rb.isKinematic && _prevVelocity.sqrMagnitude > _rb.velocity.sqrMagnitude)
       {
         Release();
       }
 
-      if (!dragging)
+      if (!_dragging)
       {
-        prevVelocity = rb.velocity;
+        _prevVelocity = _rb.velocity;
       }
     }
   }
@@ -51,40 +51,40 @@ public class SlingshotController : MonoBehaviour
 
     if (distance > maxDragDistance)
     {
-      rb.position = anchor.position + (mousePos - anchor.position).normalized * maxDragDistance;
+      _rb.position = anchor.position + (mousePos - anchor.position).normalized * maxDragDistance;
     }
     else
     {
-      rb.position = mousePos;
+      _rb.position = mousePos;
     }
   }
 
   void OnMouseDown()
   {
-    dragging = true;
+    _dragging = true;
   }
 
   void OnMouseUp()
   {
-    dragging = false;
-    rb.isKinematic = false;
+    _dragging = false;
+    _rb.isKinematic = false;
   }
 
   void Release()
   {
-    released = true;
-    player.AddForce(rb.velocity);
+    _released = true;
+    player.AddForce(_rb.velocity);
 
     Reset();
   }
 
   void Reset()
   {
-    rb.isKinematic = true;
-    rb.velocity = new Vector2(0f, 0f);
-    rb.position = anchor.position;
+    _rb.isKinematic = true;
+    _rb.velocity = new Vector2(0f, 0f);
+    _rb.position = anchor.position;
 
-    released = false;
+    _released = false;
   }
 
 }
