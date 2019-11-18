@@ -4,6 +4,8 @@ Player controller made for Unity, that functions much like a slingshot. Pull bac
 
 Under the player script, adjust the `forceToAdd` variable to controll how far to shoot the player.
 
+![Slingshot demo](./docs/demo.gif "Demo of the working slingshot")
+
 ### Starting project
 
 The project doesn't require any setup, although it may not work properly with newer versions of Unity.
